@@ -31,6 +31,6 @@ O site está organizado em seções objetivas para facilitar a navegação do us
 
 Você pode acessar a versão online deste portfólio diretamente pelo link do GitHub Pages:
 
- [Visualizar Portfólio Online](#) *(Substitua este link pelo link do seu GitHub Pages após a publicação)*
+ [Visualizar Portfólio Online](https://rafael-santos-tech.github.io/rafael-portfolio/) 
 
 ---
