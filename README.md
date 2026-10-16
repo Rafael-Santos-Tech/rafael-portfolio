@@ -13,18 +13,18 @@ Demonstrar minha capacidade de estruturar interfaces web e aplicar lógicas de p
 
 Embora a interface deste portfólio seja focada em tecnologias web, meu ecossistema de desenvolvimento abrange o funcionamento dos sistemas de ponta a ponta:
 
-*   **Front-end:** HTML5 (semântico), CSS3 (Flexbox, Grid e Variáveis)[cite: 2]
+*   **Front-end:** HTML5 (semântico), CSS3 (Flexbox, Grid e Variáveis)
 *   **Back-end & Lógica:** Python, C
 *   **Banco de Dados:** MySQL
-*   **Ferramentas & Versionamento:** Git, GitHub, GitHub Pages[cite: 2], VS Code, Code::Blocks
+*   **Ferramentas & Versionamento:** Git, GitHub, GitHub Pages, VS Code.
 
 ---
 
 ## 📂 Como navegar neste repositório
 
 O código-fonte reflete boas práticas de organização:
-*   `index.html`: Estruturação das seções (Apresentação, Sobre Mim, Habilidades e Projetos)[cite: 2].
-*   `style.css`: Estilização visual, garantindo responsividade e um design moderno[cite: 2].
+*   `index.html`: Estruturação das seções (Apresentação, Sobre Mim, Habilidades e Projetos).
+*   `style.css`: Estilização visual, garantindo responsividade e um design moderno.
 
 ---
 *Desenvolvido por [Rafael dos Santos](https://github.com/Rafael-Santos-Tech)*
