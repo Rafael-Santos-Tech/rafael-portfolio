@@ -1,36 +1,30 @@
-#  Portfólio Profissional - Design Profissional
+# 💻 Portfólio Profissional | Rafael dos Santos
 
-Portfólio acadêmico desenvolvido como parte das atividades da disciplina de **Design Profissional** do curso de **Análise e Desenvolvimento de Sistemas (ADS)**. O objetivo deste projeto é apresentar minha trajetória, habilidades técnicas e principais trabalhos desenvolvidos ao longo da faculdade.
+Bem-vindo ao repositório do meu portfólio pessoal. Este projeto foi desenvolvido para apresentar minha evolução técnica, habilidades e principais soluções práticas criadas durante minha formação em **Análise e Desenvolvimento de Sistemas (ADS)**.
 
----
-
-##  Tecnologias Utilizadas
-
-Este projeto foi construído utilizando tecnologias web fundamentais, priorizando boas práticas de design e performance:
-
-* **HTML5** (Estruturação semântica)
-* **CSS3** (Estilização avançada com Flexbox, Grid e Variáveis CSS)
-* **Git & GitHub** (Controle de versão e hospedagem)
-* **GitHub Pages** (Publicação online gratuita)
+🔗 **[Acessar o Portfólio Online](https://rafael-santos-tech.github.io/rafael-portfolio/)**
 
 ---
 
-##  Estrutura do Portfólio
+## 🎯 Objetivo
+Demonstrar minha capacidade de estruturar interfaces web e aplicar lógicas de programação sólidas, visando minha primeira oportunidade profissional na área de tecnologia (Estágio ou Júnior). 
 
-O site está organizado em seções objetivas para facilitar a navegação do usuário:
+## 🛠️ Stack Tecnológica e Estudos
 
-1. **Cabeçalho/Apresentação:** Identificação pessoal e resumo profissional.
-2. **Sobre Mim:** Breve introdução sobre minha paixão por tecnologia e foco acadêmico em ADS.
-3. **Habilidades:** Vitrine de competências técnicas e comportamentais.
-4. **Projetos e Trabalhos:** Destaque para o trabalho final da disciplina de Programação de Computadores.
-5. **Rodapé:** Links diretos para perfis profissionais (GitHub).
+Embora a interface deste portfólio seja focada em tecnologias web, meu ecossistema de desenvolvimento abrange o funcionamento dos sistemas de ponta a ponta:
 
----
-
-##  Acesso ao Projeto
-
-Você pode acessar a versão online deste portfólio diretamente pelo link do GitHub Pages:
-
- [Visualizar Portfólio Online](https://rafael-santos-tech.github.io/rafael-portfolio/) 
+*   **Front-end:** HTML5 (semântico), CSS3 (Flexbox, Grid e Variáveis)[cite: 2]
+*   **Back-end & Lógica:** Python, C
+*   **Banco de Dados:** MySQL
+*   **Ferramentas & Versionamento:** Git, GitHub, GitHub Pages[cite: 2], VS Code, Code::Blocks
 
 ---
+
+## 📂 Como navegar neste repositório
+
+O código-fonte reflete boas práticas de organização:
+*   `index.html`: Estruturação das seções (Apresentação, Sobre Mim, Habilidades e Projetos)[cite: 2].
+*   `style.css`: Estilização visual, garantindo responsividade e um design moderno[cite: 2].
+
+---
+*Desenvolvido por [Rafael dos Santos](https://github.com/Rafael-Santos-Tech)*
