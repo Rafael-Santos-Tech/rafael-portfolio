@@ -2,55 +2,380 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Portfólio de Rafael Santos: projetos de Python, análise de dados, APIs REST e desenvolvimento web.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#091221">
+  <meta name="description" content="Portfólio de Rafael Santos, estudante de ADS. Projetos em Python, Flask, Pandas, APIs REST, integração de sistemas e desenvolvimento web.">
+  <meta property="og:title" content="Rafael Santos | Desenvolvedor em formação">
+  <meta property="og:description" content="Conheça meus projetos de desenvolvimento de software, análise de dados e APIs REST.">
+  <meta property="og:type" content="website">
   <title>Rafael Santos | Portfólio de Desenvolvimento</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+
+  <!-- Os estilos ficam incorporados para evitar problemas de caminho ou cache do style.css. -->
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #091221;
+      --bg-raised: #101d30;
+      --panel: #122238;
+      --panel-hover: #172b45;
+      --text: #f0f6ff;
+      --muted: #a6b7ce;
+      --subtle: #7990ab;
+      --accent: #52c8fa;
+      --accent-2: #64e0d1;
+      --stroke: rgba(165, 190, 220, .16);
+      --radius: 20px;
+      --shadow: 0 24px 90px rgba(0,0,0,.2);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 108px; }
+    body {
+      margin: 0;
+      min-width: 320px;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 80% 12%, rgba(29, 95, 140, .17), transparent 29rem),
+        radial-gradient(circle at 8% 25%, rgba(27, 85, 130, .1), transparent 27rem),
+        var(--bg);
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 16px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+    ::selection { background: #3fa8d4; color: #05111e; }
+    a { color: inherit; text-decoration: none; }
+    a:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; border-radius: 5px; }
+    .shell { width: min(1150px, calc(100% - 56px)); margin-inline: auto; }
+    .skip-link { position: fixed; z-index: 100; left: 16px; top: -65px; background: var(--accent); padding: 12px; color: #061522; border-radius: 8px; }
+    .skip-link:focus { top: 16px; }
+
+    /* Navegação */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      border-bottom: 1px solid var(--stroke);
+      background: rgba(9, 18, 33, .93);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+    .nav-inner { display: flex; align-items: center; gap: 36px; min-height: 82px; }
+    .brand { display: inline-flex; align-items: center; gap: 12px; margin-right: auto; white-space: nowrap; font-size: 1.04rem; font-weight: 800; letter-spacing: -.03em; }
+    .brand-mark { width: 38px; height: 38px; display: grid; place-items: center; border: 1px solid rgba(82, 200, 250, .38); border-radius: 11px; background: rgba(82, 200, 250, .11); color: var(--accent); font-weight: 800; font-size: .95rem; }
+    .brand-dot { color: var(--accent); }
+    .primary-nav { display: flex; gap: 32px; align-items: center; }
+    .primary-nav a { position: relative; color: #c3d0e0; font-weight: 600; font-size: .9rem; padding: 10px 0; transition: color .2s ease; }
+    .primary-nav a::after { position: absolute; bottom: 4px; left: 0; width: 0; height: 2px; content: ""; border-radius: 3px; background: var(--accent); transition: width .2s ease; }
+    .primary-nav a:hover, .primary-nav a:focus-visible { color: var(--accent); }
+    .primary-nav a:hover::after { width: 100%; }
+    .nav-cta { display: inline-flex; align-items: center; justify-content: center; gap: 8px; border: 1px solid rgba(82,200,250,.45); background: rgba(82,200,250,.09); padding: 10px 17px; border-radius: 10px; color: #addef8; font-weight: 700; font-size: .85rem; white-space: nowrap; transition: background .2s, transform .2s; }
+    .nav-cta:hover { background: rgba(82,200,250,.17); transform: translateY(-1px); }
+
+    /* Bloco inicial */
+    .hero { display: grid; grid-template-columns: minmax(0, 1.18fr) minmax(300px, .82fr); align-items: center; gap: clamp(36px, 6vw, 90px); padding-block: 108px 100px; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 10px; margin: 0 0 20px; color: var(--accent); font-size: .75rem; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; }
+    .eyebrow-dot { width: 7px; height: 7px; flex-shrink: 0; border-radius: 50%; background: var(--accent-2); box-shadow: 0 0 12px rgba(100,224,209,.8); }
+    .hero h1 { margin: 0; font-size: clamp(3.2rem, 6vw, 5.8rem); letter-spacing: -.075em; line-height: 1.06; font-weight: 800; }
+    .hero h1 .accent { color: var(--accent); }
+    .hero-role { margin: 24px 0 16px; font-size: clamp(1.07rem, 1.8vw, 1.28rem); font-weight: 650; line-height: 1.5; }
+    .hero-description { margin: 0; max-width: 610px; font-size: 1.02rem; color: var(--muted); }
+    .actions { display: flex; align-items: center; flex-wrap: wrap; gap: 16px; margin-top: 32px; }
+    .button { display: inline-flex; align-items: center; justify-content: center; gap: 12px; min-height: 50px; padding: 13px 22px; border-radius: 11px; font-size: .9rem; font-weight: 750; line-height: 1.3; transition: transform .2s, background .2s, border-color .2s; }
+    .button:hover { transform: translateY(-3px); }
+    .button-primary { background: var(--accent); color: #071a2a; box-shadow: 0 8px 28px rgba(82,200,250,.14); }
+    .button-primary:hover { background: #82dafe; }
+    .button-secondary { color: #e2effd; background: rgba(24,41,64,.9); border: 1px solid rgba(166,190,220,.3); }
+    .button-secondary:hover { border-color: var(--accent); background: rgba(31,57,82,.95); }
+    .hero-metrics { display: flex; gap: 0; flex-wrap: wrap; margin-top: 52px; }
+    .metric { display: grid; gap: 4px; min-width: 130px; padding-inline: 22px; border-left: 1px solid var(--stroke); }
+    .metric:first-child { padding-left: 0; border-left: none; }
+    .metric strong { line-height: 1.2; font-size: 1.65rem; letter-spacing: -.05em; }
+    .metric span { color: var(--subtle); font-size: .78rem; font-weight: 600; }
+    .hero-visual { position: relative; }
+    .hero-visual::before { content: ""; position: absolute; inset: 15% -3%; z-index: -1; background: rgba(82,200,250,.14); filter: blur(67px); border-radius: 45%; }
+    .code-window { overflow: hidden; border: 1px solid rgba(116,174,211,.29); border-radius: 18px; background: #0b1729; box-shadow: var(--shadow); }
+    .window-head { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 16px 19px; background: rgba(28,44,68,.6); border-bottom: 1px solid var(--stroke); }
+    .window-dots { display: flex; gap: 7px; }
+    .window-dots span { display: block; width: 10px; height: 10px; border-radius: 50%; }
+    .window-dots span:nth-child(1) { background: #f28b82; }
+    .window-dots span:nth-child(2) { background: #f7ca71; }
+    .window-dots span:nth-child(3) { background: #60d29b; }
+    .window-file { color: #99aec9; font-size: .78rem; font-weight: 650; }
+    .code-block { margin: 0; padding: 27px 24px 28px; min-height: 276px; overflow: auto; color: #c5d5e7; font-family: Consolas, 'Liberation Mono', monospace; font-size: clamp(.74rem, 1.1vw, .9rem); line-height: 2.05; white-space: pre; }
+    .code-purple { color: #c6a4ff; }
+    .code-green { color: #8be5c0; }
+    .code-cyan { color: #77d4f9; }
+    .code-comment { color: #647d99; }
+    .available-note { display: flex; align-items: center; gap: 10px; margin-top: 20px; color: var(--muted); font-size: .82rem; }
+    .available-note::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: #66dbb1; box-shadow: 0 0 10px rgba(102,219,177,.7); }
+
+    /* Conteúdo */
+    main { display: block; }
+    .section { padding: 84px 0; border-top: 1px solid var(--stroke); }
+    .section h2 { margin: 0 0 19px; font-size: clamp(2rem, 3.8vw, 2.9rem); line-height: 1.2; letter-spacing: -.055em; }
+    .section-lead { max-width: 750px; margin: 0; color: var(--muted); font-size: 1rem; }
+    .section-heading { margin-bottom: 35px; }
+    .about-layout { display: grid; grid-template-columns: 1.25fr .75fr; gap: 40px; align-items: start; }
+    .about-layout .section-lead { line-height: 1.85; }
+    .about-aside { display: grid; gap: 18px; padding: 26px 28px; border: 1px solid var(--stroke); border-radius: var(--radius); background: rgba(18,34,56,.65); }
+    .about-aside strong { font-size: .8rem; letter-spacing: .07em; color: var(--accent); text-transform: uppercase; }
+    .about-aside p { margin: 6px 0 0; color: var(--muted); font-size: .94rem; }
+    .about-aside .rule { height: 1px; background: var(--stroke); }
+    .skills-list { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+    .skill { padding: 10px 16px; border: 1px solid rgba(161,184,212,.22); border-radius: 11px; background: rgba(19,36,59,.9); color: #d7e5f5; font-size: .88rem; font-weight: 650; }
+    .skill:hover { border-color: rgba(82,200,250,.55); }
+    .group-heading { display: flex; align-items: center; gap: 16px; margin: 50px 0 22px; }
+    .group-heading h3 { margin: 0; white-space: nowrap; font-size: 1.19rem; letter-spacing: -.02em; }
+    .group-heading::after { content: ""; width: 100%; height: 1px; background: var(--stroke); }
+    .projects-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
+    .project-card { position: relative; display: flex; flex-direction: column; min-width: 0; min-height: 385px; padding: 27px; border: 1px solid var(--stroke); border-radius: var(--radius); background: linear-gradient(155deg, rgba(23,42,67,.97), rgba(15,28,46,.97)); transition: transform .2s, border-color .2s, box-shadow .2s; }
+    .project-card:hover { border-color: rgba(82,200,250,.54); transform: translateY(-5px); box-shadow: 0 22px 45px rgba(0,0,0,.2); }
+    .project-card.featured { border-top: 3px solid var(--accent); padding-top: 25px; }
+    .card-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 24px; }
+    .card-icon { display: grid; place-items: center; width: 52px; height: 52px; color: var(--accent); font-size: 1.65rem; border-radius: 14px; background: rgba(82,200,250,.1); border: 1px solid rgba(82,200,250,.18); }
+    .card-index { font-size: .83rem; font-weight: 800; color: var(--subtle); letter-spacing: .03em; }
+    .project-category { margin: 0 0 9px; color: var(--accent); font-size: .72rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+    .project-card h4 { margin: 0 0 13px; font-size: 1.14rem; line-height: 1.35; letter-spacing: -.025em; }
+    .project-card .description { margin: 0 0 23px; color: var(--muted); font-size: .87rem; line-height: 1.76; }
+    .project-tags { display: flex; flex-wrap: wrap; gap: 7px; margin-top: auto; margin-bottom: 22px; }
+    .project-tags span { padding: 5px 9px; border: 1px solid rgba(158,187,216,.16); border-radius: 7px; color: #b5c9e2; background: rgba(5,14,25,.35); font-size: .71rem; font-weight: 650; }
+    .project-link { display: inline-flex; align-items: center; gap: 8px; width: fit-content; font-weight: 750; font-size: .87rem; color: #87dcff; }
+    .project-link:hover { color: white; text-decoration: underline; text-underline-offset: 4px; }
+    .contact-card { display: flex; justify-content: space-between; align-items: center; gap: 36px; padding: 45px; border: 1px solid rgba(82,200,250,.23); border-radius: 22px; background: radial-gradient(circle at 100% 0%, rgba(82,200,250,.1), transparent 40%), #11233a; }
+    .contact-card h2 { margin-bottom: 10px; }
+    .contact-card .section-lead { max-width: 470px; }
+    .contact-card .actions { flex-shrink: 0; margin-top: 0; }
+    .site-footer { display: flex; align-items: center; justify-content: space-between; gap: 18px; padding: 28px 0 38px; border-top: 1px solid var(--stroke); color: var(--subtle); font-size: .83rem; }
+    .site-footer a { color: #b8d9ef; }
+    .site-footer a:hover { color: var(--accent); }
+
+    @media (max-width: 1050px) {
+      .hero { grid-template-columns: minmax(0, 1.1fr) minmax(280px, .9fr); gap: 38px; }
+      .projects-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .project-card { min-height: 355px; }
+      .contact-card { flex-direction: column; align-items: flex-start; }
+    }
+    @media (max-width: 760px) {
+      .shell { width: min(100% - 40px, 640px); }
+      .nav-inner { gap: 20px; min-height: 72px; }
+      .primary-nav { gap: 18px; }
+      .nav-cta { padding: 9px 12px; }
+      .hero { grid-template-columns: 1fr; padding-block: 74px 75px; gap: 42px; }
+      .hero-visual { max-width: 500px; width: 100%; }
+      .section { padding: 66px 0; }
+      .about-layout { grid-template-columns: 1fr; gap: 30px; }
+    }
+    @media (max-width: 560px) {
+      html { scroll-padding-top: 124px; }
+      .shell { width: calc(100% - 36px); }
+      .nav-inner { display: flex; flex-wrap: wrap; gap: 0; padding-block: 12px 0; }
+      .brand { font-size: .95rem; }
+      .brand-mark { width: 34px; height: 34px; }
+      .nav-cta { padding: 8px 12px; font-size: .78rem; }
+      .primary-nav { order: 3; display: flex; justify-content: space-around; width: 100%; gap: 14px; padding: 10px 0 8px; }
+      .primary-nav a { font-size: .8rem; padding: 7px 3px; }
+      .hero { padding-block: 62px 67px; }
+      .hero h1 { font-size: clamp(2.95rem, 12vw, 4.2rem); }
+      .hero-role { margin-top: 18px; }
+      .hero-description { font-size: .94rem; }
+      .actions { gap: 12px; }
+      .button { min-height: 47px; padding: 12px 16px; font-size: .83rem; }
+      .hero-metrics { margin-top: 36px; }
+      .metric { min-width: 0; flex: 1; padding-inline: 14px; }
+      .metric strong { font-size: 1.35rem; }
+      .metric span { font-size: .7rem; }
+      .code-block { font-size: .75rem; padding: 20px 16px; min-height: 238px; }
+      .section { padding: 56px 0; }
+      .projects-grid { grid-template-columns: 1fr; gap: 16px; }
+      .project-card { min-height: 0; padding: 23px; }
+      .project-card.featured { padding-top: 21px; }
+      .group-heading { margin-top: 38px; }
+      .group-heading h3 { font-size: 1rem; }
+      .contact-card { padding: 26px 21px; }
+      .contact-card .actions { width: 100%; }
+      .contact-card .button { flex: 1 1 125px; }
+      .site-footer { flex-direction: column; align-items: flex-start; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: .01ms !important; }
+    }
+  </style>
 </head>
 <body>
-  <div class="container">
-    <nav class="navigation" aria-label="Navegação principal">
-      <a class="brand" href="#inicio">RS<span>.</span></a>
-      <div class="nav-links"><a href="#sobre">Sobre</a><a href="#habilidades">Habilidades</a><a href="#projetos">Projetos</a></div>
-    </nav>
-    <header id="inicio" class="hero">
-      <p class="eyebrow">PORTFÓLIO DE DESENVOLVIMENTO</p>
-      <h1>Rafael <span>Santos</span></h1>
-      <p class="role">Estudante de Análise e Desenvolvimento de Sistemas</p>
-      <p class="intro">Transformo desafios em soluções por meio da tecnologia. Desenvolvo projetos em Python, análise de dados, APIs REST e aplicações web.</p>
-      <div class="actions"><a class="btn primary" href="#projetos">Explorar projetos <span aria-hidden="true">↗</span></a><a class="btn secondary" href="https://github.com/Rafael-Santos-Tech" target="_blank" rel="noopener noreferrer">Meu GitHub</a></div>
-    </header>
-    <main>
-      <section id="sobre" class="section">
-        <p class="eyebrow">QUEM SOU</p><h2>Sobre mim</h2>
-        <p class="section-copy">Sou estudante de Análise e Desenvolvimento de Sistemas (ADS), interessado em Back-end, Banco de Dados, Front-end e análise de dados. Desenvolvo projetos práticos para fortalecer minha lógica de programação, aprender novas ferramentas e construir soluções que conectem diferentes tecnologias.</p>
-      </section>
-      <section id="habilidades" class="section">
-        <p class="eyebrow">MINHA STACK</p><h2>Habilidades e tecnologias</h2>
-        <div class="skills-grid"><span>Python</span><span>Pandas</span><span>Flask</span><span>APIs REST</span><span>JSON & CSV</span><span>Google Sheets</span><span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>Linguagem C</span><span>MySQL</span><span>Git & GitHub</span><span>VS Code</span><span>Lógica de Programação</span></div>
-      </section>
-      <section id="projetos" class="section">
-        <p class="eyebrow">PROJETOS SELECIONADOS</p><h2>Meus projetos</h2>
-        <p class="section-copy">Uma seleção de aplicações pessoais e acadêmicas. Explore o código-fonte e a documentação de cada projeto.</p>
-        <h3 class="group-title">Projetos pessoais em Python</h3>
-        <div class="projects-grid">
-          <article class="project-card featured"><div class="project-icon" aria-hidden="true">📊</div><p class="project-type">ANÁLISE DE DADOS</p><h4>Analisador de Dados</h4><p>Aplicação de terminal com Pandas para ler arquivos CSV, consultar estatísticas, filtrar produtos por preço e gerar análises comerciais com exportação de resultados.</p><div class="tags"><span>Python</span><span>Pandas</span><span>CSV</span><span>CLI</span></div><a class="project-link" href="https://github.com/Rafael-Santos-Tech/Python-mini-projetos/tree/main/analisador_de-dados" target="_blank" rel="noopener noreferrer">Ver código no GitHub ↗</a></article>
-          <article class="project-card featured"><div class="project-icon" aria-hidden="true">🎮</div><p class="project-type">BACK-END / API REST</p><h4>Infinite Play — Flask Games API</h4><p>API REST para gerenciar um catálogo de jogos digitais. Oferece cadastro, listagem, consulta por ID, atualização e exclusão com persistência local em JSON.</p><div class="tags"><span>Python</span><span>Flask</span><span>REST</span><span>JSON</span><span>CRUD</span></div><a class="project-link" href="https://github.com/Rafael-Santos-Tech/Python-mini-projetos/tree/main/Flask_Games_API" target="_blank" rel="noopener noreferrer">Ver código no GitHub ↗</a></article>
-          <article class="project-card featured"><div class="project-icon" aria-hidden="true">📗</div><p class="project-type">INTEGRAÇÃO DE SISTEMAS</p><h4>Integração com Google Sheets</h4><p>Projeto de estudos voltado à integração entre aplicações Python e planilhas do Google Sheets, explorando a comunicação e o tratamento de dados em serviços externos.</p><div class="tags"><span>Python</span><span>Google Sheets</span><span>Integração</span></div><a class="project-link" href="https://github.com/Rafael-Santos-Tech/Python-mini-projetos/tree/main/integracao_google_sheets" target="_blank" rel="noopener noreferrer">Ver código no GitHub ↗</a></article>
+  <a href="#conteudo" class="skip-link">Pular para o conteúdo</a>
+
+  <header class="site-header" id="inicio">
+    <div class="shell nav-inner">
+      <a class="brand" href="#inicio" aria-label="Rafael Santos, início">
+        <span class="brand-mark">RS</span><span>Rafael<span class="brand-dot">.</span></span>
+      </a>
+      <nav class="primary-nav" aria-label="Navegação principal">
+        <a href="#sobre">Sobre</a>
+        <a href="#habilidades">Habilidades</a>
+        <a href="#projetos">Projetos</a>
+      </nav>
+      <a class="nav-cta" href="https://github.com/Rafael-Santos-Tech" target="_blank" rel="noopener noreferrer" aria-label="Abrir perfil do GitHub em uma nova aba">GitHub <span aria-hidden="true">↗</span></a>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <section class="shell hero" aria-labelledby="hero-titulo">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span>Portfólio de desenvolvimento</p>
+        <h1 id="hero-titulo">Rafael <span class="accent">Santos.</span></h1>
+        <p class="hero-role">Estudante de Análise e Desenvolvimento de Sistemas</p>
+        <p class="hero-description">Transformo desafios em soluções por meio da tecnologia. Desenvolvo projetos em Python, análise de dados, APIs REST e aplicações web.</p>
+        <div class="actions">
+          <a class="button button-primary" href="#projetos">Explorar projetos <span aria-hidden="true">↗</span></a>
+          <a class="button button-secondary" href="https://github.com/Rafael-Santos-Tech" target="_blank" rel="noopener noreferrer">Meu GitHub <span aria-hidden="true">↗</span></a>
         </div>
-        <h3 class="group-title">Projetos acadêmicos e web</h3>
-        <div class="projects-grid">
-          <article class="project-card"><div class="project-icon" aria-hidden="true">🕹️</div><p class="project-type">PROJETO EM EQUIPE</p><h4>Sistema para Loja de Jogos</h4><p>Projeto acadêmico em Python com regras de negócio, organização de dados e desenvolvimento colaborativo.</p><div class="tags"><span>Python</span><span>Trabalho em equipe</span></div><a class="project-link" href="https://github.com/Gabi1301/Desenvolvimento-de-Solu-o-Python-" target="_blank" rel="noopener noreferrer">Ver repositório ↗</a></article>
-          <article class="project-card"><div class="project-icon" aria-hidden="true">💻</div><p class="project-type">ESTUDOS / ALGORITMOS</p><h4>Algoritmos Acadêmicos</h4><p>Exercícios e projetos desenvolvidos durante o curso de ADS, documentando a evolução em lógica de programação.</p><div class="tags"><span>Algoritmos</span><span>Programação</span></div><a class="project-link" href="https://github.com/Rafael-Santos-Tech/Faculdade" target="_blank" rel="noopener noreferrer">Ver repositório ↗</a></article>
-          <article class="project-card"><div class="project-icon" aria-hidden="true">🍔</div><p class="project-type">FRONT-END</p><h4>FoodLoop — Sistema de Delivery</h4><p>Interface de delivery com cardápio digital, navegação por categorias, carrinho e área de login.</p><div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div><a class="project-link" href="https://github.com/Rafael-Santos-Tech/Projeto-FoodLoop" target="_blank" rel="noopener noreferrer">Ver repositório ↗</a></article>
+        <div class="hero-metrics" aria-label="Resumo do portfólio">
+          <div class="metric"><strong>06</strong><span>Projetos em destaque</span></div>
+          <div class="metric"><strong>03</strong><span>Projetos Python</span></div>
+          <div class="metric"><strong>ADS</strong><span>Formação</span></div>
         </div>
-      </section>
-      <section class="contact section"><p class="eyebrow">CONTATO</p><h2>Vamos nos conectar?</h2><p>Conheça mais projetos e acompanhe minha evolução no desenvolvimento de software.</p><div class="actions"><a class="btn primary" href="https://github.com/Rafael-Santos-Tech" target="_blank" rel="noopener noreferrer">GitHub ↗</a><a class="btn secondary" href="https://www.linkedin.com/in/rafael-dos-santos-ferreira-lima-4996a942b" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a class="btn secondary" href="mailto:rafasantosflima2019@gmail.com">E-mail ↗</a></div></section>
-    </main>
-    <footer><span>© 2026 Rafael Santos. Desenvolvido com HTML e CSS.</span><a href="#inicio">Voltar ao topo ↑</a></footer>
-  </div>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <div class="code-window">
+          <div class="window-head"><div class="window-dots"><span></span><span></span><span></span></div><span class="window-file">sobre_mim.py</span></div>
+          <pre class="code-block"><span class="code-comment"># Desenvolvedor em evolução</span>
+<span class="code-purple">class</span> <span class="code-cyan">RafaelSantos</span>:
+    nome = <span class="code-green">"Rafael Santos"</span>
+    formacao = <span class="code-green">"ADS"</span>
+
+    habilidades = [
+        <span class="code-green">"Python"</span>, <span class="code-green">"Flask"</span>,
+        <span class="code-green">"Pandas"</span>, <span class="code-green">"SQL"</span>
+    ]
+
+    foco = <span class="code-green">"Criar soluções"</span></pre>
+        </div>
+        <div class="available-note">Projetos publicados no GitHub</div>
+      </div>
+    </section>
+
+    <section id="sobre" class="section" aria-labelledby="sobre-titulo">
+      <div class="shell about-layout">
+        <div>
+          <p class="eyebrow">Quem sou</p>
+          <h2 id="sobre-titulo">Sobre mim</h2>
+          <p class="section-lead">Sou estudante de Análise e Desenvolvimento de Sistemas (ADS), com interesse em desenvolvimento Back-end, bancos de dados, Front-end e análise de dados. Desenvolvo projetos práticos para fortalecer minha lógica de programação, explorar novas ferramentas e criar aplicações que conectem diferentes tecnologias.</p>
+        </div>
+        <aside class="about-aside" aria-label="Áreas de interesse">
+          <div><strong>Foco atual</strong><p>Python, APIs REST, dados e desenvolvimento de sistemas.</p></div>
+          <div class="rule"></div>
+          <div><strong>Meu objetivo</strong><p>Aprender continuamente e construir soluções úteis, bem organizadas e funcionais.</p></div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="habilidades" class="section" aria-labelledby="habilidades-titulo">
+      <div class="shell">
+        <p class="eyebrow">Ferramentas e conhecimentos</p>
+        <h2 id="habilidades-titulo">Habilidades e tecnologias</h2>
+        <p class="section-lead">Tecnologias utilizadas nos meus projetos e nos estudos de desenvolvimento de software.</p>
+        <div class="skills-list" aria-label="Habilidades técnicas">
+          <span class="skill">Python</span><span class="skill">Pandas</span><span class="skill">Flask</span><span class="skill">APIs REST</span><span class="skill">JSON &amp; CSV</span><span class="skill">Google Sheets</span><span class="skill">HTML5</span><span class="skill">CSS3</span><span class="skill">JavaScript</span><span class="skill">Linguagem C</span><span class="skill">MySQL</span><span class="skill">Git &amp; GitHub</span><span class="skill">VS Code</span><span class="skill">Lógica de Programação</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="projetos" class="section" aria-labelledby="projetos-titulo">
+      <div class="shell">
+        <div class="section-heading">
+          <p class="eyebrow">Trabalhos selecionados</p>
+          <h2 id="projetos-titulo">Meus projetos</h2>
+          <p class="section-lead">Projetos pessoais e acadêmicos que mostram meu aprendizado na prática. Cada cartão leva ao respectivo código-fonte no GitHub.</p>
+        </div>
+
+        <div class="group-heading"><h3>Projetos pessoais em Python</h3></div>
+        <div class="projects-grid">
+          <article class="project-card featured">
+            <div class="card-top"><span class="card-icon" aria-hidden="true">▥</span><span class="card-index">01 / 06</span></div>
+            <p class="project-category">Análise de dados</p>
+            <h4>Analisador de Dados</h4>
+            <p class="description">Aplicação de terminal com Pandas para analisar arquivos CSV, consultar estatísticas, filtrar produtos por preço e exportar resultados comerciais.</p>
+            <div class="project-tags"><span>Python</span><span>Pandas</span><span>CSV</span><span>CLI</span></div>
+            <a class="project-link" href="https://github.com/Rafael-Santos-Tech/Python-mini-projetos/tree/main/analisador_de-dados" target="_blank" rel="noopener noreferrer" aria-label="Ver código do Analisador de Dados no GitHub">Ver projeto no GitHub <span aria-hidden="true">↗</span></a>
+          </article>
+
+          <article class="project-card featured">
+            <div class="card-top"><span class="card-icon" aria-hidden="true">{ }</span><span class="card-index">02 / 06</span></div>
+            <p class="project-category">Back-end · API REST</p>
+            <h4>Infinite Play — Flask Games API</h4>
+            <p class="description">API REST para gerenciar um catálogo de jogos: cadastrar, listar, consultar, atualizar e remover registros com persistência local em JSON.</p>
+            <div class="project-tags"><span>Python</span><span>Flask</span><span>REST</span><span>JSON</span><span>CRUD</span></div>
+            <a class="project-link" href="https://github.com/Rafael-Santos-Tech/Python-mini-projetos/tree/main/Flask_Games_API" target="_blank" rel="noopener noreferrer" aria-label="Ver código da Infinite Play API no GitHub">Ver projeto no GitHub <span aria-hidden="true">↗</span></a>
+          </article>
+
+          <article class="project-card featured">
+            <div class="card-top"><span class="card-icon" aria-hidden="true">▦</span><span class="card-index">03 / 06</span></div>
+            <p class="project-category">Integração de sistemas</p>
+            <h4>Integração com Google Sheets</h4>
+            <p class="description">Projeto de estudos sobre comunicação entre aplicações Python e planilhas do Google Sheets, explorando tratamento de dados e integração externa.</p>
+            <div class="project-tags"><span>Python</span><span>Google Sheets</span><span>Integração</span></div>
+            <a class="project-link" href="https://github.com/Rafael-Santos-Tech/Python-mini-projetos/tree/main/integracao_google_sheets" target="_blank" rel="noopener noreferrer" aria-label="Ver código da integração com Google Sheets no GitHub">Ver projeto no GitHub <span aria-hidden="true">↗</span></a>
+          </article>
+        </div>
+
+        <div class="group-heading"><h3>Projetos acadêmicos e web</h3></div>
+        <div class="projects-grid">
+          <article class="project-card">
+            <div class="card-top"><span class="card-icon" aria-hidden="true">✦</span><span class="card-index">04 / 06</span></div>
+            <p class="project-category">Projeto em equipe</p>
+            <h4>Sistema para Loja de Jogos</h4>
+            <p class="description">Projeto acadêmico em Python com regras de negócio, organização de dados e desenvolvimento colaborativo.</p>
+            <div class="project-tags"><span>Python</span><span>Equipe</span></div>
+            <a class="project-link" href="https://github.com/Gabi1301/Desenvolvimento-de-Solu-o-Python-" target="_blank" rel="noopener noreferrer" aria-label="Ver repositório do Sistema para Loja de Jogos">Ver projeto no GitHub <span aria-hidden="true">↗</span></a>
+          </article>
+
+          <article class="project-card">
+            <div class="card-top"><span class="card-icon" aria-hidden="true">&lt;/&gt;</span><span class="card-index">05 / 06</span></div>
+            <p class="project-category">Estudos · Algoritmos</p>
+            <h4>Algoritmos Acadêmicos</h4>
+            <p class="description">Exercícios e projetos desenvolvidos durante o curso de ADS, documentando minha evolução em lógica de programação.</p>
+            <div class="project-tags"><span>Algoritmos</span><span>Programação</span></div>
+            <a class="project-link" href="https://github.com/Rafael-Santos-Tech/Faculdade" target="_blank" rel="noopener noreferrer" aria-label="Ver repositório de Algoritmos Acadêmicos">Ver projeto no GitHub <span aria-hidden="true">↗</span></a>
+          </article>
+
+          <article class="project-card">
+            <div class="card-top"><span class="card-icon" aria-hidden="true">◇</span><span class="card-index">06 / 06</span></div>
+            <p class="project-category">Front-end</p>
+            <h4>FoodLoop — Sistema de Delivery</h4>
+            <p class="description">Interface web de delivery com cardápio digital, navegação por categorias, carrinho e área de login.</p>
+            <div class="project-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+            <a class="project-link" href="https://github.com/Rafael-Santos-Tech/Projeto-FoodLoop" target="_blank" rel="noopener noreferrer" aria-label="Ver repositório do FoodLoop">Ver projeto no GitHub <span aria-hidden="true">↗</span></a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contato" aria-labelledby="contato-titulo">
+      <div class="shell">
+        <div class="contact-card">
+          <div>
+            <p class="eyebrow">Contato</p>
+            <h2 id="contato-titulo">Vamos nos conectar?</h2>
+            <p class="section-lead">Acompanhe minha evolução, veja meus repositórios ou entre em contato.</p>
+          </div>
+          <div class="actions">
+            <a class="button button-primary" href="https://github.com/Rafael-Santos-Tech" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+            <a class="button button-secondary" href="https://www.linkedin.com/in/rafael-dos-santos-ferreira-lima-4996a942b" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a>
+            <a class="button button-secondary" href="mailto:rafasantosflima2019@gmail.com">E-mail <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="shell site-footer">
+    <span>© 2026 Rafael Santos. Desenvolvido com HTML e CSS.</span>
+    <a href="#inicio">Voltar ao topo ↑</a>
+  </footer>
 </body>
 </html>
