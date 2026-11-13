@@ -4,205 +4,703 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#091221">
-  <meta name="description" content="Portfólio de Rafael Santos, estudante de ADS. Projetos em Python, C, Flask, Pandas, APIs REST e desenvolvimento web.">
-  <meta property="og:title" content="Rafael Santos | Desenvolvedor em formação">
-  <meta property="og:description" content="Conheça meus projetos em Python, linguagem C, análise de dados, APIs REST e desenvolvimento web.">
+  <meta name="description" content="Portfólio de Rafael Santos, estudante de ADS com foco em desenvolvimento back-end. Projetos em Python, Flask, APIs REST e persistência de dados.">
+
+  <meta property="og:title" content="Rafael Santos | Back-end em formação">
+  <meta property="og:description" content="Conheça meus projetos em Python e Flask, com foco em APIs REST e persistência de dados, e meus estudos em bancos de dados.">
   <meta property="og:type" content="website">
-  <title>Rafael Santos | Portfólio de Desenvolvimento</title>
+
+  <title>Rafael Santos | Back-end com Python e Flask</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <!-- Mantido o CSS incorporado do portfólio original. -->
-  
 </head>
+
 <body id="inicio">
   <a href="#conteudo" class="skip-link">Pular para o conteúdo</a>
-  <header class="site-header" >
+
+  <header class="site-header">
     <div class="shell nav-inner">
-      <a class="brand" href="#inicio" aria-label="Rafael Santos, início">
-        <span class="brand-mark">RS</span><span>Rafael<span class="brand-dot">.</span></span>
+      <a
+        class="brand"
+        id="marca-inicio"
+        href="#inicio"
+        aria-label="Rafael Santos, início"
+      >
+        <span class="brand-mark">RS</span>
+        <span>Rafael<span class="brand-dot">.</span></span>
       </a>
+
       <nav class="primary-nav" aria-label="Navegação principal">
         <a href="#sobre">Sobre</a>
         <a href="#habilidades">Habilidades</a>
         <a href="#projetos">Projetos</a>
       </nav>
-      <a class="nav-cta" href="https://github.com/Rafael-Santos-Tech" target="_blank" rel="noopener noreferrer" aria-label="Abrir perfil do GitHub em uma nova aba">GitHub <span aria-hidden="true">↗</span></a>
+
+      <a
+        class="nav-cta"
+        href="https://github.com/Rafael-Santos-Tech"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Abrir perfil do GitHub em uma nova aba"
+      >
+        GitHub <span aria-hidden="true">↗</span>
+      </a>
     </div>
   </header>
-  <main id="conteudo">
+
+  <main id="conteudo" tabindex="-1">
     <section class="shell hero" aria-labelledby="hero-titulo">
       <div class="hero-copy">
-        <p class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span>Portfólio de desenvolvimento</p>
-        <h1 id="hero-titulo">Rafael <span class="accent">Santos.</span></h1>
-        <p class="hero-role">Estudante de Análise e Desenvolvimento de Sistemas</p>
-        <p class="hero-description">Transformo desafios em soluções por meio da tecnologia. Desenvolvo projetos em Python, linguagem C, análise de dados, APIs REST e aplicações web.</p>
+        <p class="eyebrow">
+          <span class="eyebrow-dot" aria-hidden="true"></span>
+          Desenvolvimento back-end
+        </p>
+
+        <h1 id="hero-titulo">
+          Rafael <span class="accent">Santos.</span>
+        </h1>
+
+        <p class="hero-role">
+          Estudante de ADS com foco em desenvolvimento back-end
+        </p>
+
+        <p class="hero-description">
+          Desenvolvo projetos em Python e Flask para praticar APIs REST,
+          regras de negócio e persistência de dados. Também estudo bancos
+          de dados e integração entre sistemas.
+        </p>
+
         <div class="actions">
-          <a class="button button-primary" href="#projetos">Explorar projetos <span aria-hidden="true">↗</span></a>
-          <a class="button button-secondary" href="https://github.com/Rafael-Santos-Tech" target="_blank" rel="noopener noreferrer">Meu GitHub <span aria-hidden="true">↗</span></a>
+          <a class="button button-primary" href="#projetos">
+            Explorar projetos <span aria-hidden="true">↗</span>
+          </a>
+
+          <a
+            class="button button-secondary"
+            href="https://github.com/Rafael-Santos-Tech"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Meu GitHub <span aria-hidden="true">↗</span>
+          </a>
         </div>
+
         <div class="hero-metrics" aria-label="Resumo do portfólio">
-          <div class="metric"><strong>08</strong><span>Projetos em destaque</span></div>
-          <div class="metric"><strong>03</strong><span>Projetos Pessoais em Python</span></div>
-          <div class="metric"><strong>02</strong><span>Projetos Pessoais em C</span></div>
+          <div class="metric">
+            <strong>08</strong>
+            <span>Projetos no portfólio</span>
+          </div>
+
+          <div class="metric">
+            <strong>03</strong>
+            <span>Projetos Pessoais em Python</span>
+          </div>
+
+          <div class="metric">
+            <strong>02</strong>
+            <span>Projetos Pessoais em C</span>
+          </div>
         </div>
       </div>
-      <div class="hero-visual" aria-hidden="true">
+
+      <details
+        class="hero-visual code-preview"
+        id="apresentacao-codigo"
+        open
+      >
+        <summary class="code-preview-toggle">
+          Ver apresentação em código
+        </summary>
+
         <div class="code-window">
-          <div class="window-head"><div class="window-dots"><span></span><span></span><span></span></div><span class="window-file">sobre_mim.py</span></div>
-          <pre class="code-block"><span class="code-comment"># Desenvolvedor em evolução</span>
+          <div class="window-head">
+            <div class="window-dots" aria-hidden="true">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+
+            <span class="window-file">sobre_mim.py</span>
+          </div>
+
+          <pre class="code-block"><span class="code-comment"># Back-end em formação</span>
 <span class="code-purple">class</span> <span class="code-cyan">RafaelSantos</span>:
     nome = <span class="code-green">"Rafael Santos"</span>
     formacao = <span class="code-green">"ADS"</span>
     habilidades = [
         <span class="code-green">"Python"</span>, <span class="code-green">"Flask"</span>,
-        <span class="code-green">"Pandas"</span>, <span class="code-green">"SQL"</span>,
+        <span class="code-green">"APIs REST"</span>, <span class="code-green">"MySQL"</span>,
         <span class="code-green">"C"</span>
     ]
 
-    foco = <span class="code-green">"Criar soluções"</span></pre>
+    foco = <span class="code-green">"Back-end"</span></pre>
         </div>
-        <div class="available-note">Projetos publicados no GitHub</div>
-      </div>
+
+        <div class="available-note">
+          Projetos publicados no GitHub
+        </div>
+      </details>
     </section>
+
     <section id="sobre" class="section" aria-labelledby="sobre-titulo">
       <div class="shell about-layout">
         <div>
           <p class="eyebrow">Quem sou</p>
           <h2 id="sobre-titulo">Sobre mim</h2>
-          <p class="section-lead">Sou estudante de Análise e Desenvolvimento de Sistemas (ADS), com interesse em desenvolvimento Back-end, bancos de dados, Front-end e análise de dados. Desenvolvo projetos práticos para fortalecer minha lógica de programação, explorar novas ferramentas e criar aplicações que conectem diferentes tecnologias.</p>
+
+          <p class="section-lead">
+            Sou estudante de Análise e Desenvolvimento de Sistemas (ADS),
+            com foco em desenvolvimento back-end. Nos meus projetos,
+            trabalho com Python, Flask, APIs REST e persistência em JSON.
+            Também estudo MySQL, lógica de programação e integração entre
+            sistemas.
+          </p>
         </div>
+
         <aside class="about-aside" aria-label="Áreas de interesse">
-          <div><strong>Foco atual</strong><p>Python, APIs REST, dados e desenvolvimento de sistemas.</p></div>
+          <div>
+            <strong>Foco atual</strong>
+            <p>Python, Flask, APIs REST e estudos em bancos de dados.</p>
+          </div>
+
           <div class="rule"></div>
-          <div><strong>Meu objetivo</strong><p>Aprender continuamente e construir soluções úteis, bem organizadas e funcionais.</p></div>
+
+          <div>
+            <strong>Meu objetivo</strong>
+            <p>
+              Evoluir como desenvolvedor back-end, aprofundando meus
+              conhecimentos em APIs, bancos de dados e organização de
+              aplicações.
+            </p>
+          </div>
         </aside>
       </div>
     </section>
-    <section id="habilidades" class="section" aria-labelledby="habilidades-titulo">
+
+    <section
+      id="habilidades"
+      class="section"
+      aria-labelledby="habilidades-titulo"
+    >
       <div class="shell">
-        <p class="eyebrow">Ferramentas e conhecimentos</p>
-        <h2 id="habilidades-titulo">Habilidades e tecnologias</h2>
-        <p class="section-lead">Tecnologias utilizadas nos meus projetos e nos estudos de desenvolvimento de software.</p>
-        <div class="skills-list" aria-label="Habilidades técnicas">
-          <span class="skill">Python</span><span class="skill">Pandas</span><span class="skill">Flask</span><span class="skill">APIs REST</span><span class="skill">JSON &amp; CSV</span><span class="skill">Google Sheets</span><span class="skill">HTML5</span><span class="skill">CSS3</span><span class="skill">JavaScript</span><span class="skill">Linguagem C</span><span class="skill">MySQL</span><span class="skill">Git &amp; GitHub</span><span class="skill">VS Code</span><span class="skill">Lógica de Programação</span>
+        <div id="portfolio-habilidades">
+          <div class="skills-section">
+            <header>
+              <p class="skills-eyebrow">Ferramentas e conhecimentos</p>
+              <h2 id="habilidades-titulo">Habilidades e tecnologias</h2>
+
+              <p class="skills-lead">
+                Tecnologias que utilizo em projetos e estudos, organizadas
+                por área. Meu foco principal é o desenvolvimento back-end.
+              </p>
+            </header>
+
+            <div class="skills-groups">
+              <article
+                class="skills-area skills-area-primary"
+                aria-labelledby="skills-backend-title"
+              >
+                <div class="skills-area-heading">
+                  <h3 id="skills-backend-title">
+                    Back-end e bancos de dados
+                  </h3>
+                  <span class="skills-focus">Foco principal</span>
+                </div>
+
+                <p class="skills-area-description">
+                  APIs, regras de negócio e persistência de dados.
+                </p>
+
+                <ul
+                  class="skills-tags"
+                  aria-label="Conhecimentos em back-end e bancos de dados"
+                >
+                  <li class="skills-tag">Python</li>
+                  <li class="skills-tag">Flask</li>
+                  <li class="skills-tag">APIs REST</li>
+                  <li class="skills-tag">MySQL</li>
+                </ul>
+              </article>
+
+              <article
+                class="skills-area"
+                aria-labelledby="skills-data-title"
+              >
+                <div class="skills-area-heading">
+                  <h3 id="skills-data-title">Dados e integração</h3>
+                </div>
+
+                <p class="skills-area-description">
+                  Análise de dados, arquivos e integração com planilhas.
+                </p>
+
+                <ul
+                  class="skills-tags"
+                  aria-label="Conhecimentos em dados e integração"
+                >
+                  <li class="skills-tag">Pandas</li>
+                  <li class="skills-tag">JSON &amp; CSV</li>
+                  <li class="skills-tag">Google Sheets</li>
+                </ul>
+              </article>
+
+              <article
+                class="skills-area"
+                aria-labelledby="skills-frontend-title"
+              >
+                <div class="skills-area-heading">
+                  <h3 id="skills-frontend-title">Front-end</h3>
+                </div>
+
+                <p class="skills-area-description">
+                  Interfaces e fundamentos do desenvolvimento web.
+                </p>
+
+                <ul
+                  class="skills-tags"
+                  aria-label="Conhecimentos em front-end"
+                >
+                  <li class="skills-tag">HTML5</li>
+                  <li class="skills-tag">CSS3</li>
+                  <li class="skills-tag">JavaScript</li>
+                </ul>
+              </article>
+
+              <article
+                class="skills-area"
+                aria-labelledby="skills-tools-title"
+              >
+                <div class="skills-area-heading">
+                  <h3 id="skills-tools-title">
+                    Ferramentas e fundamentos
+                  </h3>
+                </div>
+
+                <p class="skills-area-description">
+                  Versionamento, ambiente de desenvolvimento e lógica
+                  de programação.
+                </p>
+
+                <ul
+                  class="skills-tags"
+                  aria-label="Ferramentas e fundamentos de programação"
+                >
+                  <li class="skills-tag">Git &amp; GitHub</li>
+                  <li class="skills-tag">VS Code</li>
+                  <li class="skills-tag">Linguagem C</li>
+                  <li class="skills-tag">Lógica de Programação</li>
+                </ul>
+              </article>
+            </div>
+          </div>
         </div>
       </div>
     </section>
-    <section id="projetos" class="section" aria-labelledby="projetos-titulo">
+
+    <section
+      id="projetos"
+      class="section"
+      aria-labelledby="portfolio-projects-title"
+    >
       <div class="shell">
-        <div class="section-heading">
-          <p class="eyebrow">Trabalhos selecionados</p>
-          <h2 id="projetos-titulo">Meus projetos</h2>
-          <p class="section-lead">Projetos pessoais e acadêmicos que mostram meu aprendizado na prática. Cada cartão leva ao respectivo código-fonte no GitHub.</p>
-        </div>
-        <div class="group-heading"><h3>Projetos pessoais em Python</h3></div>
-        <div class="projects-grid">
-          <article class="project-card featured">
-            <div class="card-top"><span class="card-icon" aria-hidden="true">▥</span><span class="card-index">01 / 08</span></div>
-            <p class="project-category">Análise de dados</p>
-            <h4>Analisador de Dados</h4>
-            <p class="description">Aplicação de terminal com Pandas para analisar arquivos CSV, consultar estatísticas, filtrar produtos por preço e exportar resultados comerciais.</p>
-            <div class="project-tags"><span>Python</span><span>Pandas</span><span>CSV</span><span>CLI</span></div>
-            <a class="project-link" href="https://github.com/Rafael-Santos-Tech/Python-mini-projetos/tree/main/analisador_de-dados" target="_blank" rel="noopener noreferrer" aria-label="Ver código do Analisador de Dados no GitHub">Ver projeto no GitHub <span aria-hidden="true">↗</span></a>
-          </article>
-          <article class="project-card featured">
-            <div class="card-top"><span class="card-icon" aria-hidden="true">{ }</span><span class="card-index">02 / 08</span></div>
-            <p class="project-category">Back-end · API REST</p>
-            <h4>Infinite Play — Flask Games API</h4>
-            <p class="description">API REST para gerenciar um catálogo de jogos: cadastrar, listar, consultar, atualizar e remover registros com persistência local em JSON.</p>
-            <div class="project-tags"><span>Python</span><span>Flask</span><span>REST</span><span>JSON</span><span>CRUD</span></div>
-            <a class="project-link" href="https://github.com/Rafael-Santos-Tech/Python-mini-projetos/tree/main/Flask_Games_API" target="_blank" rel="noopener noreferrer" aria-label="Ver código da Infinite Play API no GitHub">Ver projeto no GitHub <span aria-hidden="true">↗</span></a>
-          </article>
-          <article class="project-card featured">
-            <div class="card-top"><span class="card-icon" aria-hidden="true">▦</span><span class="card-index">03 / 08</span></div>
-            <p class="project-category">Integração de sistemas</p>
-            <h4>Integração com Google Sheets</h4>
-            <p class="description">Projeto de estudos sobre comunicação entre aplicações Python e planilhas do Google Sheets, explorando tratamento de dados e integração externa.</p>
-            <div class="project-tags"><span>Python</span><span>Google Sheets</span><span>Integração</span></div>
-            <a class="project-link" href="https://github.com/Rafael-Santos-Tech/Python-mini-projetos/tree/main/integracao_google_sheets" target="_blank" rel="noopener noreferrer" aria-label="Ver código da integração com Google Sheets no GitHub">Ver projeto no GitHub <span aria-hidden="true">↗</span></a>
-          </article>
-        </div>
-        <!-- NOVA SEÇÃO: Projetos pessoais em linguagem C -->
-        <div class="group-heading"><h3>Projetos pessoais em C</h3></div>
-        <div class="projects-grid">
-          <article class="project-card featured">
-            <div class="card-top"><span class="card-icon" aria-hidden="true">01</span><span class="card-index">04 / 08</span></div>
-            <p class="project-category">Lógica de programação · Conversões</p>
-            <h4>Conversor de Bases Numéricas</h4>
-            <p class="description">Aplicação de terminal que converte números entre decimal, binário, octal e hexadecimal, com menu interativo e validação de entradas.</p>
-            <div class="project-tags"><span>C</span><span>Algoritmos</span><span>Conversão de bases</span><span>CLI</span></div>
-            <a class="project-link" href="https://github.com/Rafael-Santos-Tech/mini-projetos-linguagem-C/tree/master/convesor-de-bases" target="_blank" rel="noopener noreferrer" aria-label="Ver código do Conversor de Bases Numéricas no GitHub">Ver projeto no GitHub <span aria-hidden="true">↗</span></a>
-          </article>
-          <article class="project-card featured">
-            <div class="card-top"><span class="card-icon" aria-hidden="true">× ○</span><span class="card-index">05 / 08</span></div>
-            <p class="project-category">Jogos · Terminal</p>
-            <h4>Jogo da Velha</h4>
-            <p class="description">Jogo para dois participantes, com tabuleiro 3 × 3, alternância de turnos, validação de jogadas e detecção de vitória ou empate.</p>
-            <div class="project-tags"><span>C</span><span>Matrizes</span><span>Condicionais</span><span>CLI</span></div>
-            <a class="project-link" href="https://github.com/Rafael-Santos-Tech/mini-projetos-linguagem-C/tree/master/jogo-da-velha" target="_blank" rel="noopener noreferrer" aria-label="Ver código do Jogo da Velha no GitHub">Ver projeto no GitHub <span aria-hidden="true">↗</span></a>
-          </article>
-        </div>
-        <div class="group-heading"><h3>Projetos acadêmicos e web</h3></div>
-        <div class="projects-grid">
-          <article class="project-card">
-            <div class="card-top"><span class="card-icon" aria-hidden="true">✦</span><span class="card-index">06 / 08</span></div>
-            <p class="project-category">Projeto em equipe</p>
-            <h4>Sistema para Loja de Jogos</h4>
-            <p class="description">Projeto acadêmico em Python com regras de negócio, organização de dados e desenvolvimento colaborativo.</p>
-            <div class="project-tags"><span>Python</span><span>Equipe</span></div>
-            <a class="project-link" href="https://github.com/Gabi1301/Desenvolvimento-de-Solu-o-Python-" target="_blank" rel="noopener noreferrer" aria-label="Ver repositório do Sistema para Loja de Jogos">Ver projeto no GitHub <span aria-hidden="true">↗</span></a>
-          </article>
-          <article class="project-card">
-            <div class="card-top"><span class="card-icon" aria-hidden="true">&lt;/&gt;</span><span class="card-index">07 / 08</span></div>
-            <p class="project-category">Estudos · Algoritmos</p>
-            <h4>Algoritmos Acadêmicos</h4>
-            <p class="description">Exercícios e projetos desenvolvidos durante o curso de ADS, documentando minha evolução em lógica de programação.</p>
-            <div class="project-tags"><span>Algoritmos</span><span>Programação</span></div>
-            <a class="project-link" href="https://github.com/Rafael-Santos-Tech/Faculdade" target="_blank" rel="noopener noreferrer" aria-label="Ver repositório de Algoritmos Acadêmicos">Ver projeto no GitHub <span aria-hidden="true">↗</span></a>
-          </article>
-          <article class="project-card">
-            <div class="card-top"><span class="card-icon" aria-hidden="true">◇</span><span class="card-index">08 / 08</span></div>
-            <p class="project-category">Front-end</p>
-            <h4>FoodLoop — Sistema de Delivery</h4>
-            <p class="description">Interface web de delivery com cardápio digital, navegação por categorias, carrinho e área de login.</p>
-            <div class="project-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
-            <a class="project-link" href="https://github.com/Rafael-Santos-Tech/Projeto-FoodLoop" target="_blank" rel="noopener noreferrer" aria-label="Ver repositório do FoodLoop">Ver projeto no GitHub <span aria-hidden="true">↗</span></a>
-          </article>
+        <div id="portfolio-projetos">
+          <div class="portfolio-section">
+            <header>
+              <p class="portfolio-eyebrow">Trabalhos selecionados</p>
+              <h2 id="portfolio-projects-title">Meus projetos</h2>
+
+              <p class="portfolio-lead">
+                Projetos em Python e Flask mostram meu foco em back-end.
+                Análise de dados e front-end complementam minha formação.
+              </p>
+            </header>
+
+            <div class="portfolio-group-heading">
+              <h3>Projetos em destaque</h3>
+            </div>
+
+            <div class="portfolio-featured-grid">
+              <article
+                class="portfolio-featured"
+                aria-labelledby="portfolio-api-title"
+              >
+                <div class="portfolio-featured-top">
+                  <span class="portfolio-icon" aria-hidden="true">{ }</span>
+                  <span class="portfolio-badge">Em destaque</span>
+                </div>
+
+                <p class="portfolio-category">Back-end · API REST</p>
+
+                <h4 id="portfolio-api-title">
+                  Infinite Play — Flask Games API
+                </h4>
+
+                <p class="portfolio-description">
+                  Gerencia um catálogo de jogos com cadastro, consulta,
+                  atualização e exclusão, usando persistência local em JSON.
+                </p>
+
+                <div
+                  class="portfolio-tags"
+                  aria-label="Tecnologias utilizadas"
+                >
+                  <span>Python</span>
+                  <span>Flask</span>
+                  <span>REST</span>
+                  <span>JSON</span>
+                </div>
+
+                <details>
+                  <summary>Implementação e desafio técnico</summary>
+                  <dl>
+                    <dt>Implementação</dt>
+                    <dd>
+                      API REST em Python e Flask para cadastrar, listar,
+                      consultar, atualizar e remover jogos.
+                    </dd>
+
+                    <dt>Desafio técnico</dt>
+                    <dd>
+                      Trabalhar com a persistência local dos registros
+                      em JSON nas operações do catálogo.
+                    </dd>
+                  </dl>
+                </details>
+
+                <a
+                  class="portfolio-project-link"
+                  href="https://github.com/Rafael-Santos-Tech/Python-mini-projetos/tree/main/Flask_Games_API"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Ver código da Infinite Play API no GitHub, em uma nova aba"
+                >
+                  Ver código no GitHub <span aria-hidden="true">↗</span>
+                </a>
+              </article>
+
+              <article
+                class="portfolio-featured"
+                aria-labelledby="portfolio-data-title"
+              >
+                <div class="portfolio-featured-top">
+                  <span class="portfolio-icon" aria-hidden="true">▥</span>
+                  <span class="portfolio-badge">Em destaque</span>
+                </div>
+
+                <p class="portfolio-category">Análise de dados</p>
+                <h4 id="portfolio-data-title">Analisador de Dados</h4>
+
+                <p class="portfolio-description">
+                  Consulta estatísticas de arquivos CSV, filtra produtos
+                  por preço e exporta resultados em uma aplicação de
+                  terminal.
+                </p>
+
+                <div
+                  class="portfolio-tags"
+                  aria-label="Tecnologias utilizadas"
+                >
+                  <span>Python</span>
+                  <span>Pandas</span>
+                  <span>CSV</span>
+                  <span>CLI</span>
+                </div>
+
+                <details>
+                  <summary>Implementação e desafio técnico</summary>
+                  <dl>
+                    <dt>Implementação</dt>
+                    <dd>
+                      Aplicação de terminal em Python com Pandas para
+                      analisar dados comerciais de arquivos CSV.
+                    </dd>
+
+                    <dt>Desafio técnico</dt>
+                    <dd>
+                      Combinar consultas estatísticas, filtros por preço
+                      e exportação dos resultados em um fluxo de terminal.
+                    </dd>
+                  </dl>
+                </details>
+
+                <a
+                  class="portfolio-project-link"
+                  href="https://github.com/Rafael-Santos-Tech/Python-mini-projetos/tree/main/analisador_de-dados"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Ver código do Analisador de Dados no GitHub, em uma nova aba"
+                >
+                  Ver código no GitHub <span aria-hidden="true">↗</span>
+                </a>
+              </article>
+
+              <article
+                class="portfolio-featured"
+                aria-labelledby="portfolio-foodloop-title"
+              >
+                <div class="portfolio-featured-top">
+                  <span class="portfolio-icon" aria-hidden="true">◇</span>
+                  <span class="portfolio-badge">Em destaque</span>
+                </div>
+
+                <p class="portfolio-category">Front-end</p>
+                <h4 id="portfolio-foodloop-title">
+                  FoodLoop — Sistema de Delivery
+                </h4>
+
+                <p class="portfolio-description">
+                  Interface web de delivery com cardápio digital,
+                  navegação por categorias, carrinho e área de login.
+                </p>
+
+                <div
+                  class="portfolio-tags"
+                  aria-label="Tecnologias utilizadas"
+                >
+                  <span>HTML</span>
+                  <span>CSS</span>
+                  <span>JavaScript</span>
+                </div>
+
+                <details>
+                  <summary>Implementação e desafio técnico</summary>
+                  <dl>
+                    <dt>Implementação</dt>
+                    <dd>
+                      Interface web desenvolvida com HTML, CSS e JavaScript
+                      para apresentar um sistema de delivery.
+                    </dd>
+
+                    <dt>Desafio técnico</dt>
+                    <dd>
+                      Organizar a navegação por categorias e as diferentes
+                      áreas da interface, incluindo cardápio, carrinho
+                      e login.
+                    </dd>
+                  </dl>
+                </details>
+
+                <a
+                  class="portfolio-project-link"
+                  href="https://github.com/Rafael-Santos-Tech/Projeto-FoodLoop"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Ver código do FoodLoop no GitHub, em uma nova aba"
+                >
+                  Ver código no GitHub <span aria-hidden="true">↗</span>
+                </a>
+              </article>
+            </div>
+
+            <div class="portfolio-others-intro">
+              <h3>Outros projetos</h3>
+              <p>
+                Mais projetos pessoais e acadêmicos que fazem parte
+                da minha evolução.
+              </p>
+            </div>
+
+            <section
+              class="portfolio-other-group"
+              aria-labelledby="portfolio-python-title"
+            >
+              <h4 id="portfolio-python-title">
+                Projetos pessoais em Python
+              </h4>
+
+              <ul class="portfolio-other-list">
+                <li>
+                  <a
+                    href="https://github.com/Rafael-Santos-Tech/Python-mini-projetos/tree/main/integracao_google_sheets"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Integração com Google Sheets
+                    <span aria-hidden="true">↗</span>
+                  </a>
+                  <p>Python · Google Sheets · Integração</p>
+                </li>
+              </ul>
+            </section>
+
+            <section
+              class="portfolio-other-group"
+              aria-labelledby="portfolio-c-title"
+            >
+              <h4 id="portfolio-c-title">Projetos pessoais em C</h4>
+
+              <ul class="portfolio-other-list">
+                <li>
+                  <a
+                    href="https://github.com/Rafael-Santos-Tech/mini-projetos-linguagem-C/tree/master/convesor-de-bases"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Conversor de Bases Numéricas
+                    <span aria-hidden="true">↗</span>
+                  </a>
+                  <p>C · Conversão de bases · Terminal</p>
+                </li>
+
+                <li>
+                  <a
+                    href="https://github.com/Rafael-Santos-Tech/mini-projetos-linguagem-C/tree/master/jogo-da-velha"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Jogo da Velha <span aria-hidden="true">↗</span>
+                  </a>
+                  <p>C · Matrizes · Terminal</p>
+                </li>
+              </ul>
+            </section>
+
+            <section
+              class="portfolio-other-group"
+              aria-labelledby="portfolio-academic-title"
+            >
+              <h4 id="portfolio-academic-title">Projetos acadêmicos</h4>
+
+              <ul class="portfolio-other-list">
+                <li>
+                  <a
+                    href="https://github.com/Gabi1301/Desenvolvimento-de-Solu-o-Python-"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Sistema para Loja de Jogos
+                    <span aria-hidden="true">↗</span>
+                  </a>
+                  <p>Python · Projeto em equipe</p>
+                </li>
+
+                <li>
+                  <a
+                    href="https://github.com/Rafael-Santos-Tech/Faculdade"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Algoritmos Acadêmicos
+                    <span aria-hidden="true">↗</span>
+                  </a>
+                  <p>Algoritmos · Lógica de programação</p>
+                </li>
+              </ul>
+            </section>
+          </div>
         </div>
       </div>
     </section>
-    <section class="section" id="contato" aria-labelledby="contato-titulo">
+
+    <section
+      class="section"
+      id="contato"
+      aria-labelledby="contato-titulo"
+    >
       <div class="shell">
         <div class="contact-card">
           <div>
             <p class="eyebrow">Contato</p>
             <h2 id="contato-titulo">Vamos nos conectar?</h2>
-            <p class="section-lead">Acompanhe minha evolução, veja meus repositórios ou entre em contato.</p>
+            <p class="section-lead">
+              Acompanhe minha evolução, veja meus repositórios ou entre
+              em contato.
+            </p>
           </div>
+
           <div class="actions">
-            <a class="button button-primary" href="https://github.com/Rafael-Santos-Tech" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
-            <a class="button button-secondary" href="https://www.linkedin.com/in/rafael-dos-santos-ferreira-lima-4996a942b" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a>
-            <a class="button button-secondary" href="mailto:rafasantosflima2019@gmail.com">E-mail <span aria-hidden="true">↗</span></a>
+            <a
+              class="button button-primary"
+              href="https://github.com/Rafael-Santos-Tech"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              GitHub <span aria-hidden="true">↗</span>
+            </a>
+
+            <a
+              class="button button-secondary"
+              href="https://www.linkedin.com/in/rafael-dos-santos-ferreira-lima-4996a942b"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              LinkedIn <span aria-hidden="true">↗</span>
+            </a>
+
+            <a
+              class="button button-secondary"
+              href="mailto:rafasantosflima2019@gmail.com"
+            >
+              E-mail <span aria-hidden="true">↗</span>
+            </a>
           </div>
         </div>
       </div>
     </section>
   </main>
+
   <footer class="shell site-footer">
-    <span>© 2026 Rafael Santos. Desenvolvido com HTML e CSS.</span>
+    <span>
+      © 2026 Rafael Santos. Desenvolvido com HTML, CSS e JavaScript.
+    </span>
     <a href="#inicio" id="voltar-ao-topo">Voltar ao topo ↑</a>
   </footer>
+
   <script>
-    document.getElementById('voltar-ao-topo').addEventListener('click', function (event) {
+    const marca = document.getElementById('marca-inicio');
+    const voltarAoTopo = document.getElementById('voltar-ao-topo');
+    const conteudo = document.getElementById('conteudo');
+    const pularConteudo = document.querySelector('.skip-link');
+    const apresentacaoCodigo = document.getElementById('apresentacao-codigo');
+    const telaCompacta = window.matchMedia('(max-width: 760px)');
+
+    function irParaOTopo(event) {
       event.preventDefault();
+
       window.scrollTo({
         top: 0,
         left: 0,
         behavior: 'instant'
       });
+
+      marca.focus({ preventScroll: true });
+    }
+
+    voltarAoTopo.addEventListener('click', irParaOTopo);
+    marca.addEventListener('click', irParaOTopo);
+
+    pularConteudo.addEventListener('click', function (event) {
+      event.preventDefault();
+
+      conteudo.focus({ preventScroll: true });
+      conteudo.scrollIntoView({
+        block: 'start',
+        behavior: 'instant'
+      });
     });
-</script>
+
+    function ajustarApresentacaoCodigo() {
+      const focoEstavaNoCodigo =
+        apresentacaoCodigo.contains(document.activeElement);
+
+      apresentacaoCodigo.open = !telaCompacta.matches;
+
+      if (telaCompacta.matches && focoEstavaNoCodigo) {
+        apresentacaoCodigo
+          .querySelector('summary')
+          .focus({ preventScroll: true });
+      }
+    }
+
+    ajustarApresentacaoCodigo();
+
+    telaCompacta.addEventListener(
+      'change',
+      ajustarApresentacaoCodigo
+    );
+  </script>
 </body>
 </html>
