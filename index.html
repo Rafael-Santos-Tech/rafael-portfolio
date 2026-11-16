@@ -390,13 +390,12 @@
                   <span class="portfolio-badge">Em destaque</span>
                 </div>
 
-                <p class="portfolio-category">Análise de dados</p>
-                <h4 id="portfolio-data-title">Analisador de Dados</h4>
+                <p class="portfolio-category">Análise de dados · Banco de dados</p>
+                <h4 id="portfolio-data-title">Analisador de Dados com MySQL</h4>
 
                 <p class="portfolio-description">
-                  Consulta estatísticas de arquivos CSV, filtra produtos
-                  por preço e exporta resultados em uma aplicação de
-                  terminal.
+                  Gerencia produtos no MySQL, filtra produtos por preço
+                  e gera um dashboard com faturamento, vendas e quantidades.
                 </p>
 
                 <div
@@ -404,9 +403,9 @@
                   aria-label="Tecnologias utilizadas"
                 >
                   <span>Python</span>
+                  <span>MySQL</span>
                   <span>Pandas</span>
-                  <span>CSV</span>
-                  <span>CLI</span>
+                  <span>Matplotlib</span>
                 </div>
 
                 <details>
@@ -414,24 +413,39 @@
                   <dl>
                     <dt>Implementação</dt>
                     <dd>
-                      Aplicação de terminal em Python com Pandas para
-                      analisar dados comerciais de arquivos CSV.
+                      Menu de terminal para cadastrar, consultar, atualizar
+                      e excluir produtos. Usa SQLAlchemy e PyMySQL para
+                      acessar o banco e Matplotlib para salvar o dashboard em PNG.
                     </dd>
 
                     <dt>Desafio técnico</dt>
                     <dd>
-                      Combinar consultas estatísticas, filtros por preço
-                      e exportação dos resultados em um fluxo de terminal.
+                      Migrar a análise em CSV para o MySQL, com consultas
+                      que calculam o faturamento e classificam os produtos
+                      pelo preço e pelas vendas do mês.
+                    </dd>
+
+                    <dt>Versão inicial</dt>
+                    <dd>
+                      <a
+                        class="portfolio-project-link"
+                        href="https://github.com/Rafael-Santos-Tech/Python-mini-projetos/tree/main/analisador_de_dados/analisador_CSV"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Ver versão CSV do Analisador de Dados no GitHub, em uma nova aba"
+                      >
+                        Ver versão CSV no GitHub <span aria-hidden="true">↗</span>
+                      </a>
                     </dd>
                   </dl>
                 </details>
 
                 <a
                   class="portfolio-project-link"
-                  href="https://github.com/Rafael-Santos-Tech/Python-mini-projetos/tree/main/analisador_de-dados"
+                  href="https://github.com/Rafael-Santos-Tech/Python-mini-projetos/tree/main/analisador_de_dados/analisador_MySQL"
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="Ver código do Analisador de Dados no GitHub, em uma nova aba"
+                  aria-label="Ver código do Analisador de Dados com MySQL no GitHub, em uma nova aba"
                 >
                   Ver código no GitHub <span aria-hidden="true">↗</span>
                 </a>
